@@ -25,7 +25,7 @@ Laravel is accessible, powerful, and provides tools required for large, robust a
 This is a Laravel boilerplate API example with a Laravel Sanctum user authentification system that you can use to create your own testable API-s.
 
 ## About Laravel Sanctum
-<a href="//laravel.com/docs/8.x/sanctum#how-it-works" target="_blank">Sanctum</a> is a package that you can use to issue API authentification tokens for your users. Please read the Laravel Sanctum documentation if you plan using this package in further development.
+<a href="//laravel.com/docs/8.x/sanctum#how-it-works" target="_blank">Sanctum</a> is a Laravel package that you can use to issue API authentification tokens for your users. Please read the Laravel Sanctum documentation if you plan using this package in further development.
 
 ## Database
 I used a standard MySQL database as a backup for this example API.  
