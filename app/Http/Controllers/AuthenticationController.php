@@ -7,6 +7,11 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Hash;
 
+// login credentials
+// name: Superadmin
+// email: superadmin@name.com
+// password: admin12345
+
 class AuthenticationController extends Controller
 {
     

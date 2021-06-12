@@ -16,7 +16,17 @@ use App\Http\Controllers\AuthenticationController;
 |
 */
 
-Route::group(['middleware' => ['auth:sanctum']], function() {
+Route::post('/register', [AuthenticationController::class, 'register']);
+
+Route::post('/login', [AuthenticationController::class, 'login']);
+
+Route::get('/products', [ProductController::class, 'index']);
+
+Route::get('/products/{id}', [ProductController::class, 'show']);
+
+Route::get('/search/{product}', [ProductController::class, 'search']);
+
+Route::group(['middleware' => ['auth:sanctum']], function () {
 
     Route::post('/products', [ProductController::class, 'store']);
 
@@ -27,16 +37,6 @@ Route::group(['middleware' => ['auth:sanctum']], function() {
     Route::post('/logout', [AuthenticationController::class, 'logout']);
 
 });
-
-Route::get('/products/search/{$name}', [ProductController::class, 'search']);
-
-Route::get('/products', [ProductController::class, 'index']);
-
-Route::get('/products/{id}', [ProductController::class, 'show']);
-
-Route::post('/register', [AuthenticationController::class, 'register']);
-
-Route::post('/login', [AuthenticationController::class, 'login']);
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
 
