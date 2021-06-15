@@ -21,7 +21,7 @@ class AuthenticationController extends Controller
         $fields = $request->validate([
 
             'name'      => 'required|string|regex:/^[a-zA-Z]+$/|min:2|max:255',
-            'email'     => 'required|string|unique:users,email',
+            'email'     => 'required|string|unique:users,email|email:rfc,dns',
             'password'  => 'required|string|confirmed'
 
         ]);
