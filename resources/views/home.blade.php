@@ -80,10 +80,12 @@
                             <div class="card h-100">
                                 <!-- Sale badge-->
                                 @if ($product->product_sale)
+
                                     <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">
                                         Sale
                                     </div>
-                                @else
+
+                                @endif
                                 <!-- Product image-->
                                 <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
                                 <!-- Product details-->
@@ -91,6 +93,8 @@
                                     <div class="text-center">
                                         <!-- Product name-->
                                         <h5 class="fw-bolder">{{ $product->product_name }}</h5>
+                                        <!-- Product name-->
+                                        <p class="lead">{{ $product->product_description }}</p>
                                         <!-- Product reviews-->
                                         <div class="d-flex justify-content-center small text-warning mb-2">
                                             <div class="bi-star-fill"></div>
@@ -100,7 +104,8 @@
                                             <div class="bi-star-fill"></div>
                                         </div>
 
-                                        @if ($product->product_price_low && $product->product_price_low > 0)
+                                        @if ($product->product_price_low > 0)
+
                                             <!-- Product price-->
                                             <span class="text-muted text-decoration-line-through">
                                                 {{ $product->product_price }}
@@ -111,11 +116,14 @@
                                             <span class="text-muted">
                                                 {{ $product->product_price_low }}
                                             </span>
+
                                         @else
+
                                             <!-- Product price-->
                                             <span class="text-muted">
                                                 {{ $product->product_price }}
                                             </span>
+
                                         @endif
 
                                     </div>
