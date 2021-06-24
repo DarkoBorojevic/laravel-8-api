@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\web\FrontController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,8 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+Route::get('/', [FrontController::class, 'index']);
 
-    return view('welcome');
-
-});
+Route::get('/home', [FrontController::class, 'index']);

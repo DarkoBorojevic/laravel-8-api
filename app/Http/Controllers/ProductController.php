@@ -28,11 +28,11 @@ class ProductController extends Controller
 
         $request->validate([
 
-            'product_name'          => 'required',
-            'product_category'      => 'required',
-            'product_description'   => 'required',
-            'product_excerpt'       => 'required',
-            'product_price'         => 'required'
+            'product_name'          => 'required|string|regex:/^[a-zA-Z0-9 ]+$/|min:2|max:255',
+            'product_category'      => 'required|string|regex:/^[a-zA-Z]+$/|min:2|max:255',
+            'product_description'   => 'required|string|regex:/^[a-zA-Z ]+$/|min:2|max:655',
+            'product_excerpt'       => 'required|string|regex:/^[a-zA-Z ]+$/|min:2|max:155',
+            'product_price'         => 'required|regex:/^[0-9]+(\\.[0-9]+)?$/'
 
         ]);
         
