@@ -100,7 +100,7 @@
                                             <div class="bi-star-fill"></div>
                                         </div>
 
-                                        @if ($product->product_price_low)
+                                        @if ($product->product_price_low && $product->product_price_low > 0)
                                             <!-- Product price-->
                                             <span class="text-muted text-decoration-line-through">
                                                 {{ $product->product_price }}
