@@ -9,7 +9,9 @@ class FrontController extends Controller
 {
     public function index() {
 
-        return view('home');
+        $data = Product::orderBy('id', 'desc');
+
+        return view('home')->with('products', $data);
 
     }
 }
