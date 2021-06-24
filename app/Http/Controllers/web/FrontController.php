@@ -2,16 +2,17 @@
 
 namespace App\Http\Controllers\web;
 
-use App\Http\Controllers\Controller;
+use App\Models\Product;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class FrontController extends Controller
 {
     public function index() {
 
-        $data = Product::orderBy('id', 'desc');
+        $products = Product::all()->sortByDesc('id');
 
-        return view('home')->with('products', $data);
+        return view('home')->with('products', $products);
 
     }
 }

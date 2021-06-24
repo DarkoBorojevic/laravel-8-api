@@ -32,7 +32,9 @@ class ProductController extends Controller
             'product_category'      => 'required|string|regex:/^[a-zA-Z]+$/|min:2|max:255',
             'product_description'   => 'required|string|regex:/^[a-zA-Z ]+$/|min:2|max:655',
             'product_excerpt'       => 'required|string|regex:/^[a-zA-Z ]+$/|min:2|max:155',
-            'product_price'         => 'required|regex:/^[0-9]+(\\.[0-9]+)?$/'
+            'product_price'         => 'required|regex:/^[0-9]+(\\.[0-9]+)?$/',
+            'product_price_low'     => 'required|regex:/^[0-9]+(\\.[0-9]+)?$/',
+            'product_sale'          => 'required|string|regex:/^[a-zA-Z]+$/|min:2|max:255'
 
         ]);
         
