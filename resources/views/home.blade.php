@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="Shop homepage" />
-        <meta name="author" content="Tipo IT" />
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="Shop homepage">
+        <meta name="author" content="Tipo IT">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
         <title>{{ config('app.name', 'StartBootstrap shop API') }}</title>
@@ -17,6 +17,9 @@
 
         <!-- Styles -->
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+
+        <!-- Bootstrap icons-->
+        <link href="{{ asset('bootstrap-icons/font/bootstrap-icons.css') }}" rel="stylesheet">
 
         <!-- Fontawesome icons -->
         <script src="{{ asset('fontawesome/js/solid.min.js') }}" defer></script>
@@ -52,8 +55,7 @@
                     </ul>
                     <form class="d-flex">
                         <button class="btn btn-outline-dark" type="submit">
-                            <i class="fas fa-shopping-cart"></i>
-                            Cart
+                            <i class="fas fa-shopping-cart"></i>Cart
                             <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
                         </button>
                     </form>
@@ -101,7 +103,7 @@
                                             <div class="bi-star-fill"></div>
                                             <div class="bi-star-fill"></div>
                                             <div class="bi-star-fill"></div>
-                                            <div class="bi-star-fill"></div>
+                                            <div class="bi-star"></div>
                                         </div>
 
                                         @if ($product->product_price_low > 0)
@@ -133,6 +135,9 @@
                                     <div class="text-center">
                                         <a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a>
                                     </div>
+                                    <div class="text-center mt-2">
+                                        <input type="number" name="rate" id="rate" class="form-control" min="1">
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -144,7 +149,9 @@
         </section>
         <!-- Footer-->
         <footer class="py-5 bg-dark">
-            <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Your Website 2021</p></div>
+            <div class="container">
+                <p class="m-0 text-center text-white">Copyright &copy; Your Website 2021</p>
+            </div>
         </footer>
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
