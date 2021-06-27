@@ -57,7 +57,7 @@
                     </ul>
                     <form class="d-flex">
                         <button class="btn btn-outline-dark" type="submit">
-                            <i class="fas fa-shopping-cart"></i>Cart
+                            <i class="fas fa-shopping-cart"></i> Cart
                             <span class="badge bg-dark text-white ms-1 rounded-pill" id="cart-sum"></span>
                         </button>
                     </form>
