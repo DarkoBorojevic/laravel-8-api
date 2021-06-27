@@ -174,7 +174,7 @@
                 if ($.isNumeric(a)) {
 
                    totals.push(a);
-                    
+
                 }
 
             });
@@ -186,8 +186,6 @@
             }
 
             $('#cart-sum').append(total);
-
-            console.log(totals);
 
         }
         </script>
