@@ -7,6 +7,8 @@
         <meta name="author" content="Tipo IT">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
         <title>{{ config('app.name', 'StartBootstrap shop API') }}</title>
 
         <!-- Scripts -->
@@ -56,7 +58,7 @@
                     <form class="d-flex">
                         <button class="btn btn-outline-dark" type="submit">
                             <i class="fas fa-shopping-cart"></i>Cart
-                            <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
+                            <span class="badge bg-dark text-white ms-1 rounded-pill" id="cart-sum"></span>
                         </button>
                     </form>
                 </div>
@@ -133,10 +135,10 @@
                                 <!-- Product actions-->
                                 <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                                     <div class="text-center">
-                                        <a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a>
+                                        <a class="btn btn-outline-dark mt-auto" href="#" onclick="handleCart()">Add to cart</a>
                                     </div>
                                     <div class="text-center mt-2">
-                                        <input type="number" name="rate" id="rate" class="form-control" min="1">
+                                        <input type="number" name="rate" id="rate" class="form-control ratings" value="0" min="0">
                                     </div>
                                 </div>
                             </div>
@@ -155,5 +157,39 @@
         </footer>
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
+
+        <script>
+        function handleCart() {
+
+            var sum = 0;
+            var totals = [];
+            var total = 0;
+
+            $('#cart-sum').html('');
+
+            $(".ratings").each( function() {
+
+                var a = parseInt($( this ).val());
+
+                if ($.isNumeric(a)) {
+
+                   totals.push(a);
+                    
+                }
+
+            });
+
+            for (var i = 0; i < totals.length; i++) {
+
+                total += totals[i];
+
+            }
+
+            $('#cart-sum').append(total);
+
+            console.log(totals);
+
+        }
+        </script>
     </body>
 </html>
